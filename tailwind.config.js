@@ -1,9 +1,11 @@
-import tailwindcssAnimate from 'tailwindcss-animate';
-
+import tailwindcssAnimate from 'tailwindcss-animate'
 
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ['./src/**/*.{html,js,svelte,ts}', '../../packages/ui/src/**/*.{html,js,svelte,ts}'],
+	content: [
+		'./src/**/*.{html,js,svelte,ts}',
+		'../../packages/ui/src/**/*.{html,js,svelte,ts}'
+	],
 	darkMode: ['class'],
 	plugins: [tailwindcssAnimate],
 	theme: {
