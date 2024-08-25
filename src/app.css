@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background-start: #ffffff;
+    --foreground: #000000;
+    --foreground-alt1: #333333;
+    --foreground-inverse: #ffffff;
+    --accentSubtle-alt2: #e0e0e0;
+    --accentSubtle-alt3: #f0f0f0;
+    --destructive: #ff0000;
+    --warning: #ffa500;
+    --test: #00ffff;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background-start: #1a1a1a;
+    --foreground: #ffffff;
+    --foreground-alt1: #cccccc;
+    --foreground-inverse: #000000;
+    --accentSubtle-alt2: #333333;
+    --accentSubtle-alt3: #444444;
+    --destructive: #ff4d4d;
+    --warning: #ffd700;
+    --test: #00cccc;
+  }
+}
+
+:root,
+body {
+  background-color: var(--background-start);
+  color: var(--foreground);
+}
