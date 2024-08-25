@@ -1,84 +1,64 @@
-import tailwindcssAnimate from 'tailwindcss-animate'
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
-export default {
-	content: [
-		'./src/**/*.{html,js,svelte,ts}',
-		'../../packages/ui/src/**/*.{html,js,svelte,ts}'
-	],
-	darkMode: ['class'],
-	plugins: [tailwindcssAnimate],
+const config = {
+	darkMode: ["class"],
+	content: ["./src/**/*.{html,js,svelte,ts}"],
+	safelist: ["dark"],
 	theme: {
 		container: {
 			center: true,
-			padding: '2rem',
+			padding: "2rem",
 			screens: {
-				'2xl': '1400px'
+				"2xl": "1400px"
 			}
 		},
 		extend: {
-			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			},
-			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
-			},
 			colors: {
-				card: {
-					DEFAULT: 'var(--background-start)',
-					foreground: 'var(--foreground)'
+				border: "hsl(var(--border) / <alpha-value>)",
+				input: "hsl(var(--input) / <alpha-value>)",
+				ring: "hsl(var(--ring) / <alpha-value>)",
+				background: "hsl(var(--background) / <alpha-value>)",
+				foreground: "hsl(var(--foreground) / <alpha-value>)",
+				primary: {
+					DEFAULT: "hsl(var(--primary) / <alpha-value>)",
+					foreground: "hsl(var(--primary-foreground) / <alpha-value>)"
 				},
-
+				secondary: {
+					DEFAULT: "hsl(var(--secondary) / <alpha-value>)",
+					foreground: "hsl(var(--secondary-foreground) / <alpha-value>)"
+				},
 				destructive: {
-					DEFAULT: 'var(--destructive)',
-					foreground: 'var(--foreground)'
+					DEFAULT: "hsl(var(--destructive) / <alpha-value>)",
+					foreground: "hsl(var(--destructive-foreground) / <alpha-value>)"
 				},
-				fizo: {
-					DEFAULT: 'var(--background-start)',
-					foreground: 'var(--foreground)'
-				},
-				foreground: {
-					alt1: 'var(--foreground-alt1)',
-					DEFAULT: 'var(--foreground)',
-					inverse: 'var(--foreground-inverse)'
-				},
-				input: 'var(--background-start)',
 				muted: {
-					DEFAULT: 'var(--accentSubtle-alt3)',
-					foreground: 'var(--foreground)'
+					DEFAULT: "hsl(var(--muted) / <alpha-value>)",
+					foreground: "hsl(var(--muted-foreground) / <alpha-value>)"
+				},
+				accent: {
+					DEFAULT: "hsl(var(--accent) / <alpha-value>)",
+					foreground: "hsl(var(--accent-foreground) / <alpha-value>)"
 				},
 				popover: {
-					DEFAULT: 'var(--background-start)',
-					foreground: 'var(--foreground)'
+					DEFAULT: "hsl(var(--popover) / <alpha-value>)",
+					foreground: "hsl(var(--popover-foreground) / <alpha-value>)"
 				},
-				primary: {
-					DEFAULT: 'var(--background-start)',
-					foreground: 'var(--foreground)'
-				},
-				ring: 'var(--accentSubtle-alt2)',
-				secondary: {
-					DEFAULT: 'var(--accentSubtle-alt2)',
-					foreground: 'var(--foreground)'
-				},
-				test: 'var(--test)',
-				warning: {
-					DEFAULT: 'var(--warning)',
-					foreground: 'var(--foreground)'
+				card: {
+					DEFAULT: "hsl(var(--card) / <alpha-value>)",
+					foreground: "hsl(var(--card-foreground) / <alpha-value>)"
 				}
 			},
-			fontFamily: {
-				mono: ['Consolas']
+			borderRadius: {
+				lg: "var(--radius)",
+				md: "calc(var(--radius) - 2px)",
+				sm: "calc(var(--radius) - 4px)"
 			},
-			fontSize: {
-				base: '0.925rem',
-				sm: '0.85rem',
-				xs: '.75rem',
-				xxs: '.675rem',
-				xxxs: '.6rem'
+			fontFamily: {
+				sans: [...fontFamily.sans]
 			}
 		}
-	}
-}
+	},
+};
+
+export default config;
